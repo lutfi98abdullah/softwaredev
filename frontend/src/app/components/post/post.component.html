@@ -1,0 +1,52 @@
+<div class="box-it">
+    <form [formGroup]="form" (ngSubmit)="process()">
+      <table>
+        <tr>
+          <td> <label for="name">Name:</label> </td>
+          <td>
+            <input type="text" size="50" id="name" formControlName="name">
+          </td>
+        <tr>
+          <td> <label for="email">Email:</label> </td>
+          <td>
+            <input type="email" size="50" id="email" formControlName="email" placeholder="email">
+          </td>
+        </tr>
+        <tr>
+          <td> <label for="phone">Phone:</label> </td>
+          <td>
+            <input type="phone" size="50" id="phone" formControlName="phone" placeholder="phone">
+          </td>
+        </tr>
+        <tr>
+          <td> <label for="title">Title:</label> </td>
+          <td>
+            <input type="title" size="50" id="title" formControlName="title" placeholder="title">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="description">Description:</label></td>
+          <td>
+            <textarea id="description" formControlName="description" cols="40" rows="5"></textarea>
+          </td>
+        </tr>
+        <tr>
+            <td> <label for="title">Image:</label> </td>
+            <td>
+                <input type="file" formControlName="image">
+            </td>
+          </tr>
+          <tr>
+
+        <tr>
+          <td></td>
+          <td>
+            <div class="justify-right">
+              <button type="submit" (click)="reset()">Clear</button>
+              <button type="submit" [disabled]="form.invalid">Post</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
