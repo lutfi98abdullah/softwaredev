@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import software.dev.backend.model.Posting;
 import software.dev.backend.service.PostingService;
 
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.PutObjectResult;
+
 
 
 @RestController
@@ -19,6 +25,9 @@ public class PostingController {
 
     @Autowired
     PostingService postingService;
+
+    @Autowired
+    private AmazonS3 s3;
 
     @CrossOrigin
     @PostMapping("/posting")

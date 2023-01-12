@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.io.StringReader;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -34,7 +35,7 @@ public class Posting {
     }
 
     public void setPostingId(String postingId) {
-        this.postingId = postingId;
+        this.postingId = UUID.randomUUID().toString().substring(0, 8);
     }
 
     public String getPostingDate() {
